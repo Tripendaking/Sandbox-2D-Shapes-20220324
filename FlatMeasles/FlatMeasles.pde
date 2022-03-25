@@ -36,6 +36,10 @@ rightEyeX = width*2.6/4;
 leftEyeY = height*1/4;
 rightEyeY = leftEyeY; //Best Practice: change one line of code
 eyeDiameter = smallerDisplayDimesion*1/4;
+mouthX1 = leftEyeX;
+mouthY1 = width*3/4;
+mouthX2 = rightEyeX;
+mouthY2 = mouthY1;
 //
 //Face: Circle = Inscribing a Circle in a Square
 //Center a circle on display orientation
@@ -55,6 +59,7 @@ ellipse(rightEyeX, rightEyeY, eyeDiameter, eyeDiameter);
 //
 //Mouth
 //rect();
+line(mouthX1, mouthY1, mouthX2, mouthY2);
 //
 //Measle
 //rect();
