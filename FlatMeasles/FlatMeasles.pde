@@ -1,4 +1,6 @@
 //Global Variables
+float rectFaceX, rectFaceY, rectFaceWidth, rectFaceHeight;
+float faceX, faceY, faceDiameter;
 //
 //Display Geomtery
 size(600, 400); //fullScreen(); displayWidth, displayHeight
