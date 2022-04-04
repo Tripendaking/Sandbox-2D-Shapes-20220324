@@ -32,8 +32,8 @@ if ( orientation=="Landscape or Square" ) {
 */
 //
 //Variable Population
-reset = smallerDisplayDimesion / smallerDisplayDimesion; //returns "1"
 smallerDisplayDimesion = height; //ALWAYS in Landscape
+reset = smallerDisplayDimesion / smallerDisplayDimesion; //returns "1"
 rectFaceX = (width*1/2) - (smallerDisplayDimesion*1/2);
 rectFaceY = height*0;
 rectFaceWidth = smallerDisplayDimesion; //Square Shape
