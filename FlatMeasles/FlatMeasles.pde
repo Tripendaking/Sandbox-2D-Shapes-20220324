@@ -1,5 +1,5 @@
 //Global Variables
-int smallerDisplayDimesion, mouthOpen;
+int reset, smallerDisplayDimesion, mouthOpen;
 float rectFaceX, rectFaceY, rectFaceWidth, rectFaceHeight;
 float faceX, faceY, faceDiameter;
 float leftEyeX, leftEyeY, rightEyeX, rightEyeY, eyeDiameter; 
@@ -11,7 +11,7 @@ size(600, 400); //fullScreen(); displayWidth, displayHeight
 //Landscape, not square or portrait
 int appWidth = width, appHeight = height;
 println (width, height, displayWidth, displayHeight); //Verification of values
-println(appWidth, appWidth); //Canvas Flexibility
+println(appWidth, appHeight); //Canvas Flexibility
 //
 //Display Orientation
 //Purpose: a few comparisons of IFs to ID orientation (similar to image() aspect ratio calculations)
@@ -32,6 +32,7 @@ if ( orientation=="Landscape or Square" ) {
 */
 //
 //Variable Population
+reset = smallerDisplayDimesion / smallerDisplayDimesion; //returns "1"
 smallerDisplayDimesion = height; //ALWAYS in Landscape
 rectFaceX = (width*1/2) - (smallerDisplayDimesion*1/2);
 rectFaceY = height*0;
@@ -78,6 +79,7 @@ triangle(xNose1, yNose1, xNose2, yNose2, xNose3, yNose3);
 //rect();
 strokeWeight(mouthOpen); //testing: 100=400/4, mouthOpen=height*1/4
 line(mouthX1, mouthY1, mouthX2, mouthY2);
+strokeWeight(reset); //
 //
 //Measle
 //rect();
