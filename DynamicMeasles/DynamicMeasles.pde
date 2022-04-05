@@ -10,10 +10,7 @@ void mousePressed() {}//End mousePressed
 //
 //End Main Program
 
-
-
-
-
+/*
 
 //Global Variables
 int reset, smallerDisplayDimesion, mouthOpen;
@@ -46,7 +43,7 @@ if ( orientation=="Landscape or Square" ) {
 } else { 
   println("Turn your phun"); //FUN
 }
-*/
+
 //
 //Variable Population: notice using appWidth & appHeight to move between size() & fullScreen()
 smallerDisplayDimesion = appHeight; //ALWAYS in Landscape
@@ -120,3 +117,4 @@ fill(measleColour);
 ellipse( measleX, measleY, measleDiameter, measleDiameter ); 
 stroke(reset); //reset to 1 pixel
 fill(whiteReset); //reset to first colour (i.e. blackReset)
+*/
