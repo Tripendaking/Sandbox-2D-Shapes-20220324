@@ -59,6 +59,11 @@ void setup()
   xNose3 = faceX + leftEyeY*1/2;
   yNose3 = faceY ;
   //
+  //Face: Circle = Inscribing a Circle in a Square
+  //Center a circle on display orientation
+  rect(rectFaceX, rectFaceY, rectFaceWidth, rectFaceHeight);
+  ellipse(faceX, faceY, faceDiameter, faceDiameter);
+  //
 }//End setup
 //
 void draw() {
@@ -73,15 +78,6 @@ void mousePressed() {
 //End Main Program
 
 
-
-//
-
-
-//Face: Circle = Inscribing a Circle in a Square
-//Center a circle on display orientation
-rect(rectFaceX, rectFaceY, rectFaceWidth, rectFaceHeight);
-ellipse(faceX, faceY, faceDiameter, faceDiameter);
-//
 //Left Eye
 rect(leftEyeX-eyeDiameter*1/2, leftEyeY-eyeDiameter*1/2, eyeDiameter, eyeDiameter);
 ellipse(leftEyeX, leftEyeY, eyeDiameter, eyeDiameter);
