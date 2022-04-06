@@ -1,4 +1,6 @@
 //Global Variables
+int appWidth, appHeight;
+//
 int reset, smallerDisplayDimesion, mouthOpen;
 float rectFaceX, rectFaceY, rectFaceWidth, rectFaceHeight;
 float faceX, faceY, faceDiameter;
@@ -16,8 +18,9 @@ void setup()
   //Display Geomtery
   size(600, 400); //fullScreen(); displayWidth, displayHeight
   //Landscape, not square or portrait
-  int appWidth = width, appHeight = height; //Swap with displayWidth, displayHeight for testing
   println (width, height, displayWidth, displayHeight); //Verification of values
+  appWidth = width; //Swap with displayWidth, displayHeight for testing
+  appHeight = height; 
   println(appWidth, appHeight); //Canvas Flexibility
   //
   //Display Orientation
