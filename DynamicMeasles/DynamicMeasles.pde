@@ -1,18 +1,4 @@
 //Global Variables
-//
-void setup() {}//End setup
-//
-void draw() {}//End draw
-//
-void keyPressed() {}//End keyPressed
-//
-void mousePressed() {}//End mousePressed
-//
-//End Main Program
-
-/*
-
-//Global Variables
 int reset, smallerDisplayDimesion, mouthOpen;
 float rectFaceX, rectFaceY, rectFaceWidth, rectFaceHeight;
 float faceX, faceY, faceDiameter;
@@ -20,31 +6,49 @@ float leftEyeX, leftEyeY, rightEyeX, rightEyeY, eyeDiameter;
 float mouthX1, mouthY1, mouthX2, mouthY2;
 float xNose1, yNose1, xNose2, yNose2, xNose3, yNose3;
 //
-//Display Geomtery
-size(600, 400); //fullScreen(); displayWidth, displayHeight
-//Landscape, not square or portrait
-int appWidth = width, appHeight = height; //Swap with displayWidth, displayHeight for testing
-println (width, height, displayWidth, displayHeight); //Verification of values
-println(appWidth, appHeight); //Canvas Flexibility
+void setup()
+{
+  //Display Geomtery
+  size(600, 400); //fullScreen(); displayWidth, displayHeight
+  //Landscape, not square or portrait
+  int appWidth = width, appHeight = height; //Swap with displayWidth, displayHeight for testing
+  println (width, height, displayWidth, displayHeight); //Verification of values
+  println(appWidth, appHeight); //Canvas Flexibility
+  //
+  //Display Orientation
+  //Purpose: a few comparisons of IFs to ID orientation (similar to image() aspect ratio calculations)
+  //Computer Tells us the orientation, important for Cell Phone Orientation
+  //-tell user specific orientation
+  //if ( appWidth >= appWidth ) {println("Landscape or Square");} else {println("Portrait");}
+  String ls="Landscape or Square", p="Portrait", DO="Display Orientation:", instruct="Bru, turn your phun";
+  String orientation = ( appWidth >= appHeight ) ? ls : p; //Ternary Operator, repeats IF-ELSE
+  println(DO, orientation); //Verification of value
+  if ( orientation==p ) println(instruct);
+  //With Strings, easier to print to console or canvas
+  /* if ( orientation=="Landscape or Square" ) {
+   //Empty IF
+   } else { 
+   println("Turn your phun"); //FUN
+   }
+   */
+  //
+}//End setup
 //
-//Display Orientation
-//Purpose: a few comparisons of IFs to ID orientation (similar to image() aspect ratio calculations)
-//Computer Tells us the orientation, important for Cell Phone Orientation
-//-tell user specific orientation
-//if ( appWidth >= appWidth ) {println("Landscape or Square");} else {println("Portrait");}
-String ls="Landscape or Square", p="Portrait", DO="Display Orientation:", instruct="Bru, turn your phun";
-String orientation = ( appWidth >= appHeight ) ? ls : p; //Ternary Operator, repeats IF-ELSE
-println(DO, orientation); //Verification of value
-if ( orientation==p ) println(instruct);
-//With Strings, easier to print to console or canvas
-/*
-if ( orientation=="Landscape or Square" ) {
-  //Empty IF
-} else { 
-  println("Turn your phun"); //FUN
-}
+void draw() {
+}//End draw
+//
+void keyPressed() {
+}//End keyPressed
+//
+void mousePressed() {
+}//End mousePressed
+//
+//End Main Program
+
+
 
 //
+
 //Variable Population: notice using appWidth & appHeight to move between size() & fullScreen()
 smallerDisplayDimesion = appHeight; //ALWAYS in Landscape
 reset = smallerDisplayDimesion / smallerDisplayDimesion; //returns "1"
@@ -101,16 +105,20 @@ rect(mouthX1, mouthY1, mouthWidth, mouthHeight);
 //
 //
 //Measle
-float measleDiameter = random( smallerDisplayDimesion*1/100 , smallerDisplayDimesion*1/25); //Range of measle size: small=*1/100, large=4xbigger (*1/25)
+float measleDiameter = random( smallerDisplayDimesion*1/100, smallerDisplayDimesion*1/25); //Range of measle size: small=*1/100, large=4xbigger (*1/25)
 float measleRadius = measleDiameter*1/2;
-float measleX = random( rectFaceX+measleRadius , (( rectFaceX+rectFaceWidth ) - measleRadius ) );
-float measleY = random( rectFaceY+measleRadius , (( rectFaceY+rectFaceHeight ) - measleRadius ) );
+float measleX = random( rectFaceX+measleRadius, (( rectFaceX+rectFaceWidth ) - measleRadius ) );
+float measleY = random( rectFaceY+measleRadius, (( rectFaceY+rectFaceHeight ) - measleRadius ) );
 Boolean nightMode=false; //Note: IF-ELSE similar to ternary operator
 //color red=#FF0000, measleColour=red, whiteReset=#000000; //Note: need range here too
-color measleColour = ( nightMode==false ) ? color( 255, random(0,50), random(120) ) : color( 255, random(0,50), 0 ) ; //ternary operator for day:night
+color measleColour = ( nightMode==false ) ? color( 255, random(0, 50), random(120) ) : color( 255, random(0, 50), 0 ) ; //ternary operator for day:night
 color whiteReset=#000000;
 //
-//rect();
+float measleRectX = measleX-measleDiameter*1/2;
+float measleRectY = measleY-measleDiameter*1/2;
+float measleWidth = measleDiameter;
+float measleHeight = measleDiameter;
+rect( measleRectX, measleRectY, measleWidth, measleHeight );
 //random values given other variables (similar to button code)
 noStroke(); //Shape outline
 fill(measleColour);
